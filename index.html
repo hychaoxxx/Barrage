@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>弹幕-。-</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			font-family: '微软雅黑';
+			box-sizing: border-box;
+			list-style: none;
+		}
+		body{
+			background-color: #ccc;
+		}
+		.clearfix:after{
+			display:block;
+			clear:both;
+			content:"";
+			visibility:hidden;
+			height:0
+		}
+		h1{
+			text-align: center;
+			margin: 200px 0 30px 0;
+		}
+		.container{
+			display: flex;
+			width: 900px;
+			height: 456px;
+			margin: 0 auto;
+			background-color: #fff;
+		}
+		.barrageShow{
+			float: left;
+			width: 70%;
+		}
+		.barrageList{
+			float: right;
+			width: 30%;
+		}
+		.screen{
+			position: relative;
+			height: 400px;
+			background-color: #888;
+		}
+		.barrageInput{
+			padding: 10px 20px;
+			background-color: #333;
+		}
+		.barrageInput input{
+			border: none;
+			font-size: 20px;
+			padding: 5px 10px;
+			border-radius: 1rem;
+			outline: none;
+			width: 77%;
+		}
+		.barrageInput button{
+			width: 20%;
+			float: right;
+			font-size: 20px;
+			border-radius: 1rem;
+			border: none;
+			padding: 5px 0;
+			outline: none;
+			cursor: pointer;
+		}
+		.barrageList{
+			display: flex;
+			 flex-direction:column;
+		}
+		.list-title{
+			text-align: center;
+			color: #fff;
+			background-color: #333;
+			font-size: 20px;
+			line-height: 40px;
+		}
+		.list-content{
+			flex: 1;
+			overflow-y: auto;
+		}
+		.list-content ul li{
+			padding: 5px 10px; 
+			color: gray;
+		}
+		.list-content ul li span{
+			float: right;
+			width: 30%;
+			text-align: center;
+		}
+		.list-content ul li p{
+			display: inline-block;
+			width: 70%;
+			overflow: hidden; /*自动隐藏文字*/
+		    text-overflow: ellipsis;/*文字隐藏后添加省略号*/
+		}
+	</style>
+</head>
+<body>
+	<h1>Barrage-弹幕</h1>
+	<div class="container clearfix">
+		<div class="barrageShow">
+			<div class="screen"></div>
+			<div class="barrageInput">
+				<input type="text" placeholder="请输入弹幕吧=。=" value="aaaaaaaa">
+				<button id="btn">发射</button>
+			</div>
+		</div>
+		<div class="barrageList">
+			<div class="list-title">Barrage-List</div>
+			<div class="list-content">
+				<ul>
+					<li>
+						<p>hahahahahahahahahahahahaha</p>
+						<span>18:00:00</span>
+					</li>
+					<li>
+						<p>hahahahahahahahahahahahaha</p>
+						<span>18:00:00</span>
+					</li>
+					<li>
+						<p>hahahahahahahahahahahahaha</p>
+						<span>18:00:00</span>
+					</li>
+					<li>
+						<p>hahahahahahahahahahahahaha</p>
+						<span>18:00:00</span>
+					</li>
+					<li>
+						<p>hahahahahahahahahahahahaha</p>
+						<span>18:00:00</span>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<script>
+		var btn = document.getElementById('btn');
+		var text = document.getElementsByTagName('input')[0];
+		//键盘enter和btn绑定
+		text.onfocus = function(){
+			document.onkeydown = function(e){
+			if(!e){
+				e = window.event;
+			}
+			if((e.keyCode || e.which) == 13){
+				btn.click();
+			}
+		}
+		}
+		console.log(text.value);
+		btn.onclick = function(){
+			var liNode = document.createElement('LI');
+			var pNode = document.createElement('P');
+			var spanNode = document.createElement('SPAN');
+			var textNode = text.value;
+			console.log(textNode);
+		}
+	</script>
+</body>
+</html>
