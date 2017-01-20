@@ -44,6 +44,7 @@
 			position: relative;
 			height: 400px;
 			background-color: #888;
+			overflow: hidden;
 		}
 		.barrageInput{
 			padding: 10px 20px;
@@ -94,6 +95,7 @@
 		.list-content ul li p{
 			display: inline-block;
 			width: 70%;
+			white-space:nowrap; 
 			overflow: hidden; /*自动隐藏文字*/
 		    text-overflow: ellipsis;/*文字隐藏后添加省略号*/
 		}
@@ -146,7 +148,8 @@
 		//点击发射按钮发送弹幕
 		btn.onclick = function() {
 			//判断输入为空时提醒输入
-			if(text.value == '') {
+			var space  = /^[\s]*$/;
+			if(text.value == '' || space.test(text.value)) {
 				alert('请输入弹幕内容QAQ=。=');
 				return false;
 			}
