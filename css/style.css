@@ -1,0 +1,111 @@
+* {
+	margin: 0;
+	padding: 0;
+	font-family: '微软雅黑';
+	box-sizing: border-box;
+	list-style: none;
+}
+body {
+	background-color: #ccc;
+}
+.clearfix:after {
+	display: block;
+	clear: both;
+	content: "";
+	visibility: hidden;
+	height: 0
+}
+h1 {
+	text-align: center;
+	margin: 200px 0 30px 0;
+}
+.container {
+	display: flex;
+	width: 900px;
+	height: 456px;
+	margin: 0 auto;
+	background-color: #fff;
+}
+.barrageShow {
+	float: left;
+	width: 70%;
+}
+.barrageList {
+	float: right;
+	width: 30%;
+}
+.screen {
+	position: relative;
+	height: 400px;
+	background-color: #888;
+	overflow: hidden;
+	padding: 5px 0;
+}
+.barrageInput {
+	padding: 10px 20px;
+	background-color: #333;
+}
+.barrageInput input {
+	border: none;
+	font-size: 20px;
+	padding: 5px 10px;
+	border-radius: 1rem;
+	outline: none;
+	width: 77%;
+}
+.barrageInput button {
+	width: 20%;
+	float: right;
+	font-size: 20px;
+	border-radius: 1rem;
+	border: none;
+	padding: 5px 0;
+	outline: none;
+	cursor: pointer;
+}
+.barrageList {
+	display: flex;
+	flex-direction: column;
+}
+.list-title {
+	text-align: center;
+	color: #fff;
+	background-color: #333;
+	font-size: 20px;
+	line-height: 40px;
+}
+.list-content {
+	flex: 1;
+	overflow-y: auto;
+}
+.list-content ul li {
+	padding: 5px 10px;
+	color: gray;
+}
+.list-content ul li span {
+	float: right;
+	width: 30%;
+	text-align: center;
+}
+.list-content ul li p {
+	display: inline-block;
+	width: 70%;
+	white-space: nowrap;
+	overflow: hidden; /*自动隐藏文字*/
+	text-overflow: ellipsis;/*文字隐藏后添加省略号*/
+}
+.screen p {
+	position: absolute;
+	left: -300px;
+	animation: Bscreen 8s linear  alternate;
+	font-size: 20px;
+	white-space: nowrap;
+}
+@keyframes Bscreen {
+	0% {
+		left: 630px;
+	}
+	100% {
+		left: -300px;
+	}
+}
