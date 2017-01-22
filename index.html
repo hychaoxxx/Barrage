@@ -45,6 +45,7 @@
 			height: 400px;
 			background-color: #888;
 			overflow: hidden;
+			padding: 5px 0;
 		}
 		.barrageInput{
 			padding: 10px 20px;
@@ -99,6 +100,22 @@
 			overflow: hidden; /*自动隐藏文字*/
 		    text-overflow: ellipsis;/*文字隐藏后添加省略号*/
 		}
+		.screen p{
+			position: absolute;
+			left: -300px;
+			animation: Bscreen 8s linear  alternate;
+			font-size: 20px;
+			white-space:nowrap;
+		}
+		@keyframes Bscreen
+		{
+		    0%{
+		    	left: 630px;
+		    }
+		    100%{
+		    	left: -300px;
+		    }
+		}
 	</style>
 </head>
 <body>
@@ -107,7 +124,7 @@
 		<div class="barrageShow">
 			<div class="screen" id="Bscreen"></div>
 			<div class="barrageInput">
-				<input type="text" placeholder="请输入弹幕吧=。=">
+				<input type="text" placeholder="请输入弹幕吧=。=" maxlength="15">
 				<button id="btn">发射</button>
 			</div>
 		</div>
@@ -155,10 +172,17 @@
 			}
 			//生成个节点进行appendChild
 			var ulNode = document.getElementById('list-list');
+			var screen = document.getElementById('Bscreen');
 			var liNode = document.createElement('LI');
 			var pNode = document.createElement('P');
+			var BpNode = document.createElement('P');
+			var randomColor = ['red','white','green','blue','yellow'];
+			var randomnum = Math.random() * 90;
+			BpNode.style.color = randomColor[Math.floor(Math.random() * 5)];
+			BpNode.style.top = randomnum + '%';
 			var spanNode = document.createElement('SPAN');
 			var textNode = document.createTextNode(text.value);
+			var BtextNode = document.createTextNode(text.value);
 			console.log(textNode);
 			var pDate = new Date();
 			var pH = pDate.getHours();
@@ -179,6 +203,9 @@
 			liNode.appendChild(pNode);
 			liNode.appendChild(spanNode);
 			ulNode.appendChild(liNode);
+			BpNode.appendChild(BtextNode);
+			Bscreen.appendChild(BpNode);
+			setTimeout('Bscreen.removeChild(Bscreen.childNodes[0]);',8000);
 			//滚动条置底
 			Blist.scrollTop = Blist.scrollHeight;
 			//发送完成input的value值重置为空
