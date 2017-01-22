@@ -1,2 +1,2 @@
 # Barrage
-Barrage.弹幕插件=。=
+Barrage.弹幕插件-，-
