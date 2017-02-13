@@ -1,0 +1,35 @@
+{
+  "name": "barrage",
+  "version": "1.0.0",
+  "description": "Barrage demo.",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp": "^3.9.1"
+  },
+  "devDependencies": {
+    "gulp-clean-css": "^3.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-htmlmin": "^3.0.0",
+    "gulp-if": "^2.0.2",
+    "gulp-jshint": "^2.0.4",
+    "gulp-notify": "^3.0.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^2.0.1",
+    "gulp-useref": "^3.1.2",
+    "jshint": "^2.9.4",
+    "webpack": "^2.2.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hychaoxxx/barrage.git"
+  },
+  "author": "chaox",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hychaoxxx/barrage/issues"
+  },
+  "homepage": "https://github.com/hychaoxxx/barrage#readme"
+}
